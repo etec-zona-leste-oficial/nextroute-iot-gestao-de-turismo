@@ -1,0 +1,386 @@
+/*Esse é o css que mandei lá no grupo, depois vou colocar o root aqui para padronizar mais*/
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+/* Vou mandar no grupo este código para padronizar*/
+:root {
+  --azulescuro: #041D45;
+  --azul: #0055aa;
+  --azulclaro: #4a90e2;
+  --laranja: #ff6600;
+  --cinza: #f4f4f4;
+  --texto: #333;
+  --branco: #ffffff;
+  --fonte: 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: var(Desativado para testes);
+  color: var(--texto);
+  line-height: 1.6;
+  font-family: 'inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:focus-visible {
+    
+  outline: 2px solid #4a90e2 !important;
+}
+
+
+.teste1{
+  transform: translateY(10px);
+  text-align: left;
+}
+
+
+.logo {
+  
+  height: 55px;
+  width: auto;
+
+}
+
+
+footer {
+  margin-right: auto;
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  color: #333;
+  height: 250px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px; /* espaço entre colunas e ícones */
+  flex-wrap: wrap;
+  align-items: flex-start; /* alinhamento no topo */
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  font-size: 0.9rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  margin: 6px 0;
+}
+
+.footer-section a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Ícones grandes entre as colunas */
+.footer-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 120px; /* largura fixa */
+}
+
+.footer-illustration img {
+  margin-top: 30px;
+  margin-left: -50px;
+  max-width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.footer-illustration2 img {
+  transform: translateX(-70px);
+  max-width: 130px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.Instagram {
+  width: 10px;
+}
+
+.Twitter {
+  height: 11px;
+}
+
+
+.Youtube {
+  width: 10px;
+}
+
+
+
+
+
+
+
+
+nav a { /* Fonte / texto */
+  font-family: 'Inter', sans-serif;
+  font-weight: 900; /* peso Black */
+  font-weight: 600;
+  color: var(--branco);
+  transition: color 0.3s;
+}
+
+nav a:hover { /* hover do nav*/
+  color: gray;
+}
+
+
+/* NAV FIXO E ALINHAMENTO */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--azulescuro);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+
+
+nav ul {
+  transform: translateX(30px);
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--branco);
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #4a90e2;
+}
+
+/* MOBILE */
+.menu-toggle {
+  background-color: #0055aa;
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--branco);
+  outline: none;
+  border: none;
+}
+
+@media (max-width: 642px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background-color: var(--azulescuro);
+    padding: 20px 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  footer {
+      display:block;
+      margin-bottom: 0;
+  }
+
+  .footer-illustration2 img{
+      display:block;
+      margin-bottom: 0;
+  }
+
+}
+
+
+
+
+
+.retangulo {
+  width: 100%;    
+  height: 20px;      
+  background-color: var(--azulescuro); 
+  transform: translateY(30px);
+} 
+
+
+
+@media (max-width: 320px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }  
+  
+  
+  .footer {
+      display:block;
+      margin-bottom: 0;
+  }
+
+  .footer-illustration2 img{
+      display:block;
+      margin-bottom: 0;
+  }
+}
+
+/* iPad*/
+@media (max-width: 1024px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+    footer {
+      display:flex;
+      margin-bottom: 0;
+  }
+
+  .footer-illustration2 img{
+      display:block;
+      margin-bottom: 0;
+  }
+
+
+}
+
+
+
+/* CSS novo (não vou mandar no grupo porque já é a parte final*/
+
+  * { 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif;
+ }
+
+  body {
+     background-color: #f9f9f9;
+     color: #0f2d5e;
+     line-height: 1.5; }
+
+
+
+  /* Main */
+  main { 
+    padding: 120px 50px 50px; 
+    max-width: 1200px;
+    margin: auto; }
+
+  section { 
+    margin-bottom: 60px;
+ }
+  section h2 { 
+    font-size: 2rem;
+    margin-bottom: 25px; 
+    color: #0f2d5e; }
+
+  .cards { display: grid; grid-template-columns:
+     repeat(auto-fit,
+     minmax(250px, 1fr)); 
+     gap: 20px; }
+
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.12); }
+
+  .card img { width: 100%; 
+    height: 180px;
+     object-fit: cover; 
+    }
+
+  .card-content { 
+    padding: 15px;
+ }
+  .card-content h3 { 
+    font-size: 1.2rem; 
+    margin-bottom: 5px;
+ color: #0f2d5e; 
+}
+  .card-content p { font-size: 0.9rem; 
+    margin-bottom: 10px; 
+    color: #555; 
+}
+
+  .card-content .price { 
+    font-weight: 900;
+     font-size: 1.1rem; 
+     color: #0f2d5e; 
+    }
+
+  .btn {
+    background-color: var(--azul);
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .btn:hover {
+
+   background-color: var(--azulescuro);
+    transform: translateY(-2px); 
+}
+
+
+  @media (max-width: 768px) {
+    main { padding: 140px 20px 50px; }
+    .card img { height: 160px; }
+  }
