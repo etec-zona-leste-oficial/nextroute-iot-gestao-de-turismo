@@ -1,5 +1,5 @@
-NextRoute 🚀
-📌 Objetivo do Projeto
+NextRoute 
+Objetivo do Projeto
 
 O projeto NextRoute tem como objetivo desenvolver inovar o setor de gestão de turismo unindo sustentabilidade,
 acessibilidade e experiência do usuário. Buscamos ser transparentes sobre a nossa estrutura e demonstrar eficiência junto ao custo-benefício para que nossos clientes se sintam
