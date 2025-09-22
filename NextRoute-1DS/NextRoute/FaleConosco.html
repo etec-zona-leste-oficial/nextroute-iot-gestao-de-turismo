@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fale Conosco - NextRoute</title>
+
+  <!-- Fonte Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #041D45;
+      --primary-light: #0D2D66;
+      --secondary: #F5F7FA;
+      --accent: #00A8E8;
+      --light: #F5F7FA;
+      --dark: #1A1A1A;
+      --gray: #6B7280;
+      --gray-light: #E5E7EB;
+      --footer-bg: #002654;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(25, 6, 6, 0.183);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      height: 45px;
+    }
+
+    nav {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 2rem;
+    }
+
+    .menu-links,
+    .menu-login {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .img-contato {
+      margin-top: 2rem;
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Container contato */
+    .container-contato {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 3rem;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    /* Cartões */
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Formulário */
+    .form-contato {
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .form-contato h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .form-contato input, 
+    .form-contato textarea {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      border: 1px solid var(--gray-light);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-contato input:focus, 
+    .form-contato textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.1);
+    }
+
+    .form-contato textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+    }
+
+    textarea + .form-icon {
+      top: 1.5rem;
+      transform: none;
+    }
+
+    .form-contato button {
+      width: 100%;
+      padding: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form-contato button:hover {
+      background: var(--primary-light);
+    }
+
+    /* Info contato */
+    .info-contato {
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .info-contato h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      background: var(--primary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details {
+      flex: 1;
+    }
+
+    .contact-details h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--primary);
+    }
+
+    .contact-details p {
+      color: var(--gray);
+    }
+
+    /* Mapa */
+    .mapa {
+      margin-top: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      height: 250px;
+    }
+
+    .mapa iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Rodapé */
+    .main-footer {
+      background-color: var(--footer-bg);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      width: 100%;
+    }
+
+/* FOOTER ESTILO FAQ */
+.main-footer {
+  background-color: #f5f5f5; /* mesmo fundo do FAQ */
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px; /* espaço entre colunas e ilustrações */
+  flex-wrap: wrap;
+  align-items: flex-start; /* alinhamento no topo */
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  font-size: 0.9rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #041D45; /* cor azul escuro */
+}
+
+.footer-section p {
+  margin: 6px 0;
+}
+
+.footer-section a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Ilustrações grandes entre colunas */
+.footer-illustration,
+.footer-illustration2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 120px; /* largura fixa */
+}
+
+.footer-illustration img {
+  margin-top: 30px;
+  margin-left: -50px;
+  max-width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.footer-illustration2 img {
+  transform: translateX(-70px);
+  max-width: 130px;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* Ícones sociais */
+.Instagram,
+.Youtube {
+  width: 10px;
+}
+
+.Twitter {
+  height: 11px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-illustration img,
+  .footer-illustration2 img {
+    transform: none;
+    margin: 0;
+    max-width: 140px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+}
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .terms-link {
+      color: var(--secondary) !important;
+      font-weight: 500;
+      margin-top: 1.2rem !important;
+      font-size: 0.9rem !important;
+    }
+
+.main-footer {
+  background-color: #f5f5f5;
+  padding: 40px 0 0 0; /* só topo, sem padding lateral */
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.copyright {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      nav {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .container-contato {
+        padding: 2rem 1rem;
+        gap: 2rem;
+      }
+
+      .form-contato, .info-contato {
+        padding: 1.5rem;
+      }
+
+      .main-footer {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .main-footer > div {
+        margin: 15px 0;
+      }
+    }
+
+    .retangulo {
+  width: 100%;    
+  height: 20px;      
+  background-color: var(--azulescuro); 
+  transform: translateY(30px);
+} 
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="imagens/icon.png" alt="NextRoute" class="logo">
+    </div>
+    <nav>
+      <ul class="menu-links">
+        <li><a href="faq.html">Planeje sua viagem</a></li>
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="FaleConosco.html">Contato</a></li>
+        <li><a href="sobrenos.html">Sobre nós</a></li>
+      </ul>
+
+      <ul class="menu-login">
+        <li><a href="#cadastro">Cadastro</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <h1>Fale Conosco</h1>
+    <p>Estamos aqui para ajudar você a planejar a viagem dos seus sonhos. Entre em contato conosco!</p>
+  </section>
+
+
+  <div class="container-contato">
+    
+    <!-- FORMULÁRIO -->
+    <div class="card form-contato">
+      <h2>Envie sua mensagem</h2>
+      <form>
+        <div class="form-group">
+          <i class="fas fa-user form-icon"></i>
+          <input type="text" placeholder="Nome completo" required>
+        </div>
+        
+        <div class="form-group">
+          <i class="fas fa-envelope form-icon"></i>
+          <input type="email" placeholder="Email" required>
+        </div>
+        
+        <div class="form-group">
+          <i class="fas fa-phone form-icon"></i>
+          <input type="tel" placeholder="Telefone">
+        </div>
+        
+        <div class="form-group">
+          <i class="fas fa-comment form-icon"></i>
+          <textarea placeholder="Sua mensagem"></textarea>
+        </div>
+        
+        <button type="submit">
+          <i class="fas fa-paper-plane"></i>
+          Enviar mensagem
+        </button>
+      </form>
+    </div>
+
+    <!-- INFORMAÇÕES -->
+    <div class="card info-contato">
+      <h2>Informações de Contato</h2>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Endereço</h3>
+          <p>Av. Sen. Queirós 208 - Centro Histórico de São Paulo</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Telefone</h3>
+          <p>(11) 92375-8952</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Email</h3>
+          <p>Nextrouteturismo@outlook.com</p>
+        </div>
+      </div>
+      
+      <div class="mapa">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.792594609729!2d-46.633309385385146!3d-23.54220528469273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a1b1faaaab%3A0x123456789abcdef!2sAv.%20Sen.%20Queir%C3%B3s%20208%20-%20Centro%20Hist%C3%B3rico%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1678834567890"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+
+      
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contatos</h3>
+      <p><a href="mailto:Nextrouteturismo@Outlook.com">Nextrouteturismo@Outlook.com</a></p>
+      <p><a href="https://NextRoute.com.br/contato">NextRoute.com.br/contato</a></p>
+      <p>(55) 11 92375-8952</p>
+      <p><a href="#">Nossos Termos de usuário</a></p>
+    </div>
+
+    <div class="footer-illustration">
+      <img src="imagens/aviaopontaponta.png" alt="Avião">
+    </div>
+
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <p><img src="imagens/Instagram.png" class="Instagram"> NextRoute_Oficial</p>
+      <p><img src="imagens/Twitter3.png" class="Twitter"> NextRouteTurismo</p>
+      <p><img src="imagens/Youtube.png" class="Youtube"> NextRouteTurismo</p>
+    </div>
+
+    <div class="footer-illustration2">
+      <img src="imagens/praia.png" alt="Praia">
+    </div>
+
+    <div class="footer-section">
+      <h3>Agências físicas próximas</h3>
+      <p>Av. Melchert 273N - Vila Matilde, São Paulo</p>
+      <p>Av. Tiradentes 825 - Jardim Santa Edwirges, Guarulhos</p>
+      <p>Av. Sen. Queirós 208v - Centro Histórico de São Paulo</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 NextRoute Turismo - Todos os direitos reservados
+  </div>
+</footer>
+
+</body>
+</html>

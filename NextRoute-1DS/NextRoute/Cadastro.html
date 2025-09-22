@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextRoute | Cadastro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azulescuro: #041D45;
+    --azul: #0055aa;
+    --azulclaro: #4a90e2;
+    --laranja: #ff6600;
+    --cinza: #f4f4f4;
+    --texto: #333;
+    --branco: #ffffff;
+    --fonte: 'Inter', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body, html {
+    margin: 0;
+    font-family: var(--fonte);
+    height: 100%;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--azulescuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+
+  nav h1 {
+    font-family: var(--fonte);
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--branco);
+    margin: 0;
+  }
+
+  .login-container {
+    flex: 1;
+    display: flex;
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
+  }
+
+  .login-left, .login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* reduzido para corpo menor */
+  }
+
+  .login-left {
+    background-color: var(--branco);
+    flex-direction: column;
+    gap: 15px; /* menos espaço entre elementos */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 400px; /* largura menor para reduzir o corpo */
+    width: 100%;
+  }
+
+  .login-left h1 {
+    font-size: 26px;
+    color: var(--azulescuro);
+    margin-bottom: 6px;
+  }
+
+  .login-left p {
+    color: var(--texto);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .login-left form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* menos espaço entre inputs */
+  }
+
+  .login-left input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+  }
+
+  .login-left button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    background-color: var(--azul);
+    color: var(--branco);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .login-left button:hover {
+    background-color: var(--azulescuro);
+  }
+
+  .login-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-top: 8px;
+    gap: 20px;
+  }
+
+  .login-options a {
+    color: var(--azul);
+    text-decoration: none;
+  }
+
+  .login-options a:hover {
+    text-decoration: underline;
+  }
+
+  .back-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .back-button button {
+    all: unset;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--azul);
+    color: var(--branco);
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: background 0.3s;
+  }
+
+  .back-button button:hover {
+    background-color: var(--azulescuro);
+  }
+
+  .success {
+    display: none;
+    margin-top: 12px;
+    padding: 10px;
+    background-color: #f1fbf4;
+    border: 1px solid #cce6d3;
+    border-radius: 8px;
+    color: #0b8043;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .login-right {
+    background-image: url('imagens/NextRouteLoginpng.png');
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media (max-width: 900px) {
+    .login-container {
+      flex-direction: column;
+    }
+    .login-right {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>NextRoute | Cadastro</h1>
+</nav>
+
+<div class="login-container">
+  <div class="login-left">
+    <h1>Criar conta</h1>
+    <p>Preencha seus dados para criar sua conta</p>
+    <form id="signupForm">
+      <input type="text" placeholder="Nome" required>
+      <input type="text" placeholder="Sobrenome" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Senha" required>
+      <input type="password" placeholder="Confirmar senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="login-options">
+      <a href="login.html">Já tem conta? Fazer login</a>
+      <a href="senha.html">Esqueceu a senha?</a>
+    </div>
+
+    <div class="back-button">
+      <button onclick="window.location.href='faq.html'">Voltar à Página Inicial</button>
+    </div>
+
+    <div id="successMsg" class="success">Conta criada com sucesso! Redirecionando para o login...</div>
+  </div>
+
+  <div class="login-right"></div>
+</div>
+
+<script>
+  const form = document.getElementById('signupForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.onsubmit = e => {
+    e.preventDefault();
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 3500);
+  }
+</script>
+
+</body>
+</html>
