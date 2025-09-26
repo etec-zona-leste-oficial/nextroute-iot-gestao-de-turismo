@@ -1,0 +1,872 @@
+  :root {
+    --azul-escuro: #041D45;
+    --azul: #0055aa;
+    --azul-claro: #4a90e2;
+    --laranja: #ff6600;
+    --azul-claro2: #84ADCE;
+    --cinza: #f4f4f4;
+    --branco: #ffffff;
+    --texto: #333;
+    --fonte: 'Inter', sans-serif;
+
+  }
+
+
+
+  body {
+    margin: 0;
+    font-family: var(--fonte);
+    background-color: var(--branco);
+    color: var(--texto);
+  }
+
+  header {
+    background-color: var(--azul-escuro);
+    padding: 20px 30px;
+  }
+
+  /*Inicio do nav novo */
+
+  nav a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; 
+    font-weight: 600;
+    color: var(--branco);
+    transition: color 0.3s;
+  }
+
+  nav a:hover { 
+    color: gray;
+  }
+
+
+  /* Mudei essa parte da parte de login que estavam juntos*/
+  nav .Menu-login  {
+
+  margin-left: auto;
+  margin-right: 30px;
+
+  }
+
+
+  /* NAV FIXO  */
+  nav {
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    background-color: var(--azulescuro);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+.Menu-login {
+  transform: translateX(700px);
+}
+
+  nav ul {
+    transform: translateX(30px);
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    font-family: Sans-serif;
+    font-weight: 600;
+    color: var(--branco);
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #4a90e2;
+  }
+
+  /* MOBILE */
+  .menu-toggle {
+    background-color: #0055aa;
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--branco);
+    outline: none;
+    border: none;
+  }
+
+
+
+  .Menu-login a,
+  nav ul li a {
+    text-decoration: none;
+  }
+
+
+
+/*Mudei o nav e deixei igual o da Melissa*/
+
+
+
+.card-destino:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+
+
+
+.banner {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.banner h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.search-form {
+  background-color: var(--branco);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.search-form input, .search-form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-form button {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: var(--azul-claro);
+}
+
+.experiences {
+  padding: 40px 20px;
+  background-color: var(--branco);
+  text-align: center;
+}
+
+.experiences h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+/*Adicionei o robo no código da Lara, depois mando o código no grupo*/
+
+.atendente-humano {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.atendente-humano button {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.atendente-humano button:hover {
+  background-color: var(--azul);
+}
+
+.chatbox {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  max-height: 70vh;
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 2000;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-header {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.fechar-chat {
+  background: none;
+  border: none;
+  color: var(--branco);
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.fechar-chat:hover {
+  color: var(--azul-claro);
+}
+
+.chat-body {
+  padding: 15px;
+  font-size: 14px;
+  color: var(--texto);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.mensagem {
+  background-color: var(--cinza);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 10px 0;
+  max-width: 90%;
+  line-height: 1.6;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.mensagem.bot {
+  background-color: var(--azul);
+  color: var(--branco);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.mensagem.user {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+  align-self: flex-end;
+  font-size: 13px;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.texto-bot {
+  flex: 1;
+  line-height: 1.6;
+  font-size: 13px;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.perguntas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.perguntas button {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.perguntas button:hover {
+  background-color: var(--azul-claro);
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  background-color: var(--branco);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.chat-input button {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  padding: 8px 12px;
+  margin-left: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chat-input button:hover {
+  background-color: var(--azul-claro);
+}
+
+
+.pontos-digitando {
+  display: inline-block;
+  font-size: 24px;
+  letter-spacing: 4px;
+  animation: piscar 1s infinite;
+}
+
+.pontos-digitando span {
+  animation: bounce 1.2s infinite ease-in-out;
+  display: inline-block;
+}
+
+.pontos-digitando span:nth-child(1) {
+  animation-delay: 0s;
+}
+.pontos-digitando span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.pontos-digitando span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+}
+
+
+
+
+
+.limpar-chat {
+  background: none;
+  border: none;
+  color: var(--branco);
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.limpar-chat:hover {
+  color: var(--laranja);
+}
+
+
+
+
+
+
+
+/*Aqui é o fim, copiem até o #resposta para vocês passarem no html*/
+
+
+
+
+.experiencias-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  background-color: var(--branco);
+  align-items: flex-start;
+}
+
+.mensagem-destaque {
+  flex: 1 1 300px;
+  max-width: 400px;
+  font-size: 18px;
+  color: var(--texto);
+  font-family: var(--fonte);
+  text-align: justify;
+}
+
+
+
+
+
+
+
+.experiencias-em-alta {
+  padding: 40px 20px;
+  background-color: var(--branco);
+  font-family: var(--fonte);
+}
+
+.experiencias-em-alta h2 {
+  font-size: 24px;
+  color: var(--azul);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.conteudo-experiencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mensagem-destaque {
+  flex: 1 1 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.passaporte {
+  background-color: var(--azul);
+  color: var(--branco);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+
+.btn-reservar:hover {
+  background-color: #357ABD;
+}
+
+.card-destino h4 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: var(--azul);
+}
+
+.cards-destinos {
+    text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  flex: 2 1 600px;
+}
+
+.card-destino {
+  flex: 1 1 150px;
+  background-color: var(--branco);
+  padding: 16px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.card-destino img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+
+.card-destino p {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.card-destino span {
+  font-weight: bold;
+  color: var(--azul-escuro);
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+.form-busca {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  background-color: var(--azul-claro2);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-width: 850px;
+  margin: 10px auto;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo label {
+  color: var(--branco);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: var(--fonte);
+}
+
+.campo input,
+.campo select {
+  padding: 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  width: 160px;
+  background-color: var(--branco);
+  color: var(--texto);
+}
+
+.form-busca button {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background-color 0.3s;
+  align-self: flex-end;
+}
+
+.form-busca button:hover {
+  background-color: #357ABD;
+}
+
+
+
+
+
+
+/*Esse a personalização das opções do pacote de viagem. Evitem mexer*/
+
+
+
+
+
+/*Sobre nós (Depois vou adicionar a imagem*/
+
+
+
+
+
+.sobre-nos {
+  background-color: var(--cinza);
+  padding: 40px 20px;
+  font-family: var(--fonte);
+}
+
+.sobre-nos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  max-width: 1000px;
+  margin:  auto;
+}
+
+.sobre-nos-imagem img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.sobre-nos-texto {
+  flex: 1;
+  color: var(--texto);
+}
+
+.sobre-nos-texto h2 {
+  color: var(--azul);
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.sobre-nos-texto p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: var(--fonte);
+  color: #333;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px; 
+  flex-wrap: wrap;
+  align-items: flex-start; 
+}
+
+.footer-section {
+  font-family: var(--fonte)z;
+  flex: 1 1 250px;
+  font-size: 0.9rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  margin: 6px 0;
+}
+
+.footer-section a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 120px; 
+}
+
+.footer-illustration img {
+  margin-top: 30px;
+  margin-left: -50px;
+  max-width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.footer-illustration2 img {
+  transform: translateX(-70px);
+  max-width: 130px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.Instagram {
+  width: 10px;
+}
+
+.Twitter {
+  height: 11px;
+}
+
+
+.Youtube {
+  width: 10px;
+}
+
+
+.logo {
+  
+  height: 55px;
+  width: auto;
+
+}
+
+
+
+.formulario {
+  background-color: var(--branco);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.formulario input, .formulario button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.formulario button {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  cursor: pointer;
+}
+
+.experiencias {
+  padding: 40px 20px;
+  background-color: var(--branco);
+  text-align: center;
+}
+
+.experiencias h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--cinza);
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-weight: bold;
+}
+
+.mensagem {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+
+.retangulo {
+  width: 100%;    
+  height: 20px;      
+  background-color: var(--azul-escuro); 
+  transform: translateY(30px);
+} 
+
+
+
+/* Menu padrão - desktop */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul.Menu-login {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+/* Botão hamburguer - escondido no desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== Responsivo ===== */
+
+
+
+
+
+
+
+/* MOBILE */
+    @media (max-width: 768px) {
+      header { flex-direction: column; padding: 1rem; }
+      nav { margin-top: 1rem; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      .hero-section h1 { font-size: 2rem; }
+      .container-contato { padding: 2rem 1rem; gap: 2rem; }
+      .form-contato, .info-contato { padding: 1.5rem; }
+
+      /* Menu Hambúrguer */
+      .menu-toggle { display: flex; flex-direction: column; justify-content: space-between; width: 28px; height: 21px; cursor: pointer; margin-left: auto; }
+      .menu-toggle span { display: block; height: 3px; width: 100%; background-color: white; border-radius: 3px; transition: all 0.3s ease; }
+
+      .menu-links, .menu-login { display: none; flex-direction: column; width: 100%; text-align: center; background-color: var(--primary); border-radius: 8px; margin-top: 0.5rem; overflow: hidden; }
+      .menu-links.show, .menu-login.show { display: flex; }
+      nav { flex-direction: column; align-items: flex-end; width: 100%; }
+
+      .main-footer { flex-direction: column; padding: 20px; }
+      .main-footer > div { margin: 15px 0; }
+    }

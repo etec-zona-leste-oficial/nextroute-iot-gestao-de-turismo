@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextRoute - Reserva de Hospedagem</title>
+<style>
+  /* ===== Variáveis de cores ===== */
+   :root {
+    --azulescuro: #041D45;
+    --azulclaro: #e6f0ff;
+    --branco: #ffffff;
+    --cinza-claro: #f5f5f5;
+  }
+
+  /* ===== Reset básico ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    color: var(--azulescuro);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ===== Navbar ===== */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--azulescuro);
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Menu-login {
+  margin-left: auto; /* força ficar à direita */
+}
+
+.logo {
+  
+  height: 55px;
+  width: auto;
+
+}
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav .logo img {
+    height: 45px;
+  }
+
+
+  nav a {
+    font-weight: 600;
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #4a90e2;
+  }
+
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+
+  /* ===== Banner ===== */
+.banner img {
+  width: 100%;
+  height: auto;
+  margin-top: 70px; 
+  max-height: 450px; 
+  object-fit: cover; 
+}
+
+  .banner-title {
+    margin: 2rem 0;
+  }
+
+  .banner-title h1 {
+    color: var(--azulescuro);
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+/* ===== Formulário de Reserva ===== */
+.reserva-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff; /* fundo branco da caixa */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.reserva-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem; /* espaçamento entre título e campos */
+}
+
+/* Cada campo (label + input/select) */
+.reserva-form .campo {
+  margin-bottom: 1.8rem; /* espaçamento entre cada "caixa" */
+}
+
+.reserva-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* espaçamento entre label e input */
+}
+
+.reserva-form input,
+.reserva-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff; /* fundo branco das caixas */
+  color: #000;
+}
+
+.reserva-form input[readonly] {
+  background-color: #f8f8f8;
+  cursor: not-allowed;
+}
+
+/* Botões */
+.reserva-form button,
+.reserva-form .btn-proximo {
+  padding: 12px 25px;
+  font-weight: 700;
+  background-color: #041D45;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.reserva-form button:hover,
+.reserva-form .btn-proximo:hover {
+  background-color: #063366;
+}
+
+  /* Footer */
+footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  font-size: 0.9rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-section a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-illustration img,
+.footer-illustration2 img {
+  max-width: 120px;
+  height: auto;
+  opacity: 0.9;
+}
+
+  /* Responsivo */
+  @media(max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      display: none;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    nav ul.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .reserva-form {
+      padding: 1rem;
+    }
+  }
+
+  
+.retangulo {
+  width: 100%;    
+  height: 20px;      
+  background-color: var(--azulescuro); 
+  transform: translateY(30px);
+} 
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  
+<div class="logo-container">
+  <a href="index.html">
+    <img src="imagens/icon.png" alt="NextRoute" class="logo">
+  </a>
+</div>
+
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+        <ul>
+
+          <span style="color:white; font-weight:700; margin-left:10px;">NextRoute</span>
+          <li><a href="faq.html">Planeje sua viagem</a></li>
+          <li><a href="Destinos.html">Destinos</a></li>
+          <li><a href="FaleConosco.html">Contato</a></li>
+          <li><a href="sobrenos.html">Sobre nós</a></li>
+
+
+        </ul>
+
+
+        <ul class="Menu-login">
+          <li><a class="Cadastro" href="Cadastro.html">Cadastro</a></li>
+          <li><a class="Cadastro" href="Login.html">Login</a></li>
+
+        </ul>
+</nav>
+
+<!-- ===== Banner ===== -->
+<div class="banner">
+  <img src="https://i.ibb.co/4RVRTJgR/39db177f0d94aba9b3732e67fb0d38f6.jpg" alt="Banner Reserva">
+</div>
+
+<!-- ===== Título abaixo do banner ===== -->
+<section class="banner-title">
+  <h1>Reserva de Hospedagem</h1>
+</section>
+
+<!-- ===== Formulário de Hospedagem ===== -->
+<section class="reserva-form">
+  <h2>Preencha os dados da sua hospedagem</h2>
+  <form id="formReserva">
+
+    <div class="campo">
+      <label for="hospedagem">Local de hospedagem:</label>
+      <select id="hospedagem" required>
+        <option value="">Selecione o destino</option>
+        <option value="sao_paulo">São Paulo</option>
+        <option value="rio_de_janeiro">Rio de Janeiro</option>
+        <option value="salvador">Salvador</option>
+        <option value="fortaleza">Fortaleza</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="checkin">Data de entrada:</label>
+      <input type="date" id="checkin" required>
+    </div>
+
+    <div class="campo">
+      <label for="checkout">Data de saída:</label>
+      <input type="date" id="checkout" required>
+    </div>
+
+    <div class="campo">
+      <label for="hospedes">Número de hóspedes:</label>
+      <input type="number" id="hospedes" min="1" max="10" value="1" required>
+    </div>
+
+    <div class="campo">
+      <label for="tipoQuarto">Tipo de quarto:</label>
+      <select id="tipoQuarto" required>
+        <option value="">Selecione o quarto</option>
+        <option value="standard">Standard</option>
+        <option value="luxo">Luxo</option>
+        <option value="suite">Suíte Master</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="valor">Valor total:</label>
+      <input type="text" id="valor" value="" placeholder="R$ 0,00" readonly>
+    </div>
+
+    <div class="botoes">
+      <button type="submit">Finalizar Reserva</button>
+      <a href="#" class="btn-proximo" onclick="history.back(); return false;">Voltar</a>
+    </div>
+
+  </form>
+</section>
+
+
+    <div class="retangulo"></div>
+    <br><br>
+
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>Contatos</h3>
+      <p><a href="mailto:NextRouteturismo@Outlook.com">Nextrouteturismo@Outlook.com</a></p>
+      <p><a href="#">NextRoute.com.br/contato</a></p>
+      <p><a href="#">(55) 11 923758952</a></p>
+      <p><a href="#">Nossos Termos de usuário</a></p>
+    </div>
+
+    <div class="footer-illustration">
+      <img src="imagens/aviaopontaponta.png" alt="Avião">
+    </div>
+
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <p><a href="https://www.instagram.com/nextroute_turismo/" target="_blank"><img src="imagens/Instagram.png" alt="Instagram" class="Instagram"> NextRoute_Turismo</a></p>
+      <p><a href="#"><img src="imagens/Twitter3.png" alt="Twitter" class="Twitter"> NextRouteTurismo</a></p>
+      <p><a href="#"><img src="imagens/Youtube.png" alt="YouTube" class="Youtube"> NextRouteTurismo</a></p>
+    </div>
+
+    <div class="footer-illustration2">
+      <img src="imagens/praia.png" alt="Praia">
+    </div>
+
+    <div class="footer-section">
+      <h3>Agências físicas próximas</h3>
+      <p><a href="#">Av. Melchert 273N - Vila Matilde, São Paulo</a></p>
+      <p><a href="#">Av. Tiradentes 825 - Jardim Santa Edwirges, Guarulhos</a></p>
+      <p><a href="#">Av. Sen. Queirós 208v - Centro Histórico de São Paulo</a></p>
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  const valorInput = document.getElementById("valor");
+const checkin = document.getElementById("checkin");
+const checkout = document.getElementById("checkout");
+const hospedes = document.getElementById("hospedes");
+const tipoQuarto = document.getElementById("tipoQuarto");
+
+// Datas mínima e máxima
+const hoje = new Date();
+const minDate = hoje.toISOString().split("T")[0];
+const maxDate = new Date();
+maxDate.setFullYear(hoje.getFullYear() + 100);
+const maxDateStr = maxDate.toISOString().split("T")[0];
+
+checkin.min = minDate;
+checkin.max = maxDateStr;
+checkout.min = minDate;
+checkout.max = maxDateStr;
+
+// Garantir checkout >= checkin
+checkin.addEventListener("change", () => {
+  checkout.min = checkin.value || minDate;
+  calcularValor();
+});
+
+checkout.addEventListener("change", calcularValor);
+hospedes.addEventListener("input", calcularValor);
+tipoQuarto.addEventListener("change", calcularValor);
+
+function calcularValor() {
+  if (!checkin.value || !checkout.value || !hospedes.value || !tipoQuarto.value) {
+    valorInput.value = "";
+    return;
+  }
+
+  const dataEntrada = new Date(checkin.value);
+  const dataSaida = new Date(checkout.value);
+
+  if (dataSaida <= dataEntrada) {
+    valorInput.value = "";
+    return;
+  }
+
+  const dias = Math.ceil((dataSaida - dataEntrada) / (1000 * 60 * 60 * 24));
+  const numHospedes = parseInt(hospedes.value, 10);
+
+  let precoBase = 0;
+  switch (tipoQuarto.value) {
+    case "standard": precoBase = 200; break;
+    case "luxo": precoBase = 350; break;
+    case "suite": precoBase = 500; break;
+  }
+
+  const total = precoBase * dias * numHospedes;
+  valorInput.value = `R$ ${total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+}
+
+// Evita envio real do form
+document.getElementById("formReserva").addEventListener("submit", function(e) {
+  e.preventDefault();
+  if (valorInput.value) {
+    alert("Reserva finalizada! Valor total: " + valorInput.value);
+  } else {
+    alert("Preencha todos os campos corretamente para calcular o valor.");
+  }
+});
+  
+  function toggleMenu() {
+  const menu = document.getElementById('nav-menu');
+  menu.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

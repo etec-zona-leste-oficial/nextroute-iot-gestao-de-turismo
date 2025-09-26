@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextRoute | Página Inicial</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="imagens/icon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+      <nav>
+
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+       <img src="imagens/icon.ico" alt="Logo" class="logo">
+       <span style="color:white; font-weight:700; margin-left:10px;">NextRoute</span>
+
+       <div>
+
+        <ul>
+
+
+          <li><a href="faq.html">Planeje sua viagem</a></li>
+          <li><a href="Destinos.html">Destinos</a></li>
+          <li><a href="FaleConosco.html">Contato</a></li>
+          <li><a href="sobrenos.html">Sobre nós</a></li>
+         <ul class="Menu-login">
+          <li><a class="Cadastro" href="Cadastro.html">Cadastro</a></li>
+          <li><a class="Cadastro" href="Login.html">Login</a></li>
+
+        </ul>
+
+        </ul>
+      </div>
+
+
+
+      </nav>
+    </header>
+
+  <section class="banner">
+    <h1>Voe mais alto com nossas nuvens de ofertas!</h1>
+
+  </section>
+
+
+
+<form class="form-busca">
+
+  <div class="campo">
+    <label for="origem">Origem</label>
+    <input type="text" id="origem" placeholder="São Paulo, BR">
+  </div>
+
+  <div class="campo">
+    <label for="destino">Destino</label>
+    <input type="text" id="destino" placeholder="Vale da Lua, GO">
+  </div>
+
+  <div class="campo">
+    <label for="data">Data Ida/Volta</label>
+    <input type="date" id="data">
+  </div>
+
+<div class="campo">
+  <label for="pacote">Pacote</label>
+  <select id="pacote" class="pacote-select">
+    <option>Deluxe</option>
+    <option>Premium</option>
+    <option>Econômico</option>
+  </select>
+</div>
+
+
+  <button type="submit">Buscar</button>
+
+</form>
+
+
+
+
+<section class="experiencias-em-alta">
+  <h2>Experiências em alta (Brasil):</h2>
+
+  <div class="conteudo-experiencias">
+    <div class="mensagem-destaque">
+      <p><strong>Apenas diga o necessário e a NextRoute resolve o resto!</strong></p>
+      <p class="passaporte"><strong>Já pensou em preparar tudo, e esquecer seu passaporte?</strong></p>
+    </div>
+
+    <div class="cards-destinos">
+<div class="cards-destinos">
+
+  <div class="card-destino" onclick="window.location.href='fernando.html'">
+    <img src="imagens/Fernando.png" alt="Fernando de Noronha">
+    <h4>Fernando de Noronha</h4>
+    <p>Praias paradisíacas e natureza exuberante</p>
+    <span>Pacotes a partir de R$5790,00</span>
+  </div>
+
+  <div class="card-destino" onclick="window.location.href='paraty.html'">
+    <img src="imagens/PAraty.png" alt="Paraty">
+    <h4>Paraty</h4>
+    <p>Centro histórico charmoso e belas praias</p>
+    <span>Pacotes a partir de R$3650,00</span>
+  </div>
+
+  <div class="card-destino" onclick="window.location.href='lencois.html'">
+    <img src="imagens/Lencois.png" alt="Lençóis Maranhenses">
+    <h4>Lençóis Maranhenses</h4>
+    <p>Paisagens únicas com lagoas incríveis</p>
+    <span>Pacotes a partir de R$3850,00</span>
+  </div>
+
+  <div class="card-destino" onclick="window.location.href='cataratas.html'">
+    <img src="imagens/cataratas.png" alt="Cataratas do Iguaçu">
+    <h4>Cataratas do Iguaçu</h4>
+    <p>Belezas naturais impressionantes</p>
+    <span>Pacotes a partir de R$3850,00</span>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+
+
+
+
+     <div class="retangulo"></div>
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+<div class="atendente-humano">
+  <button onclick="abrirChat()">Atendimento</button>
+</div>
+
+  <div class="chatbox" id="chatbox">
+    <div class="chat-header">
+      <span>Atendimento NextRoute</span>
+      <button class="fechar-chat" onclick="fecharChat()">✖</button>  <button class="limpar-chat" onclick="limparChat()">🗑</button>
+
+    </div>
+    <div class="chat-body" id="chat-body">
+      <div class="perguntas">
+        <button onclick="selecionarPergunta(1)">O que é a NextRoute?</button>
+        <button onclick="selecionarPergunta(2)">Como funciona o planejamento?</button>
+        <button onclick="selecionarPergunta(3)">A NextRoute tem aplicativo?</button>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="mensagemUsuario" placeholder="Digite sua mensagem..." />
+      <button onclick="enviarMensagem()">Enviar</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<section class="sobre-nos">
+  <div class="sobre-nos-container">
+    <div class="sobre-nos-imagem">
+      <img src="imagens/mapacarro.png" alt="Pessoa segurando mapa">
+    </div>
+    <div class="sobre-nos-texto">
+      <h2>Quem somos</h2>
+      <p><strong>Fundada em 2025</strong>, a NextRoute surgiu da paixão por transformar viagens em experiências inesquecíveis.</p>
+      <p>Somos uma empresa especializada em gestão estratégica de turismo, combinando inovação, acessibilidade e atendimento personalizado para criar jornadas únicas.</p>
+      <p>Nosso propósito vai além de simplesmente planejar roteiros: queremos conectar pessoas a destinos incríveis, com conforto, segurança e muito estilo.</p>
+      <p>Acreditamos que cada viagem é uma oportunidade para explorar, aprender e criar memórias que vão durar toda uma vida.</p>
+      <p><strong>Quem somos?</strong> Uma equipe de especialistas apaixonados por turismo, tecnologia e serviço de excelência. Desde o primeiro contato até o retorno para casa, trabalhamos para surpreender nossos clientes, garantindo que cada experiência seja ainda melhor que a anterior.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('nav ul'); 
+  const login = document.querySelector('.Menu-login');
+
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('show');
+    login.classList.toggle('show');
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  const faqBoxes = document.querySelectorAll('.faq-box');
+
+  faqBoxes.forEach((box, index) => {
+    box.style.cursor = 'pointer'; 
+
+    box.addEventListener('click', () => {
+      switch(index) {
+        case 0:
+          window.location.href = 'organizesuaviagem.html';
+          break;
+        case 1:
+          window.location.href = 'vooperdido.html';
+          break;
+        case 2:
+          window.location.href = 'voointernacional.html';
+          break;
+        case 3:
+          window.location.href = 'hospedagemlocal.html';
+          break;
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+<!-- Chat que avisei no grupo-->
+
+<script>
+function abrirChat() {
+  const chatbox = document.getElementById("chatbox");
+  if (chatbox.style.display === "flex") {
+    chatbox.style.display = "none";
+  } else {
+    chatbox.style.display = "flex";
+  }
+}
+
+
+function fecharChat() {
+  document.getElementById("chatbox").style.display = "none";
+}
+
+function selecionarPergunta(opcao) {
+  const chatBody = document.getElementById("chat-body");
+  let pergunta = "";
+  let resposta = "";
+
+  switch(opcao) {
+    case 1:
+      pergunta = "O que é a NextRoute?";
+      resposta = "A NextRoute é uma empresa especializada em gestão de turismo, transformando viagens em experiências únicas.";
+      break;
+    case 2:
+      pergunta = "Como funciona o planejamento?";
+      resposta = "Você escolhe origem, destino e data, e nós cuidamos do resto com serviço personalizado.";
+      break;
+    case 3:
+      pergunta = "A NextRoute tem aplicativo?";
+      resposta = "Não. No momento a NextRoute somente está disponível em sua versão de site. Aguarde por novas atualizações! 😀";
+      break;
+  }
+
+  const userMsg = document.createElement("div");
+  userMsg.className = "mensagem user";
+  userMsg.innerText = pergunta;
+  chatBody.appendChild(userMsg);
+
+  const botoes = document.querySelector(".perguntas");
+  if (botoes) botoes.remove();
+
+  // Adiciona bolha de digitação
+  const digitando = document.createElement("div");
+  digitando.className = "mensagem bot digitando";
+  digitando.innerHTML = `
+    <div class="bolinha-avatar"></div>
+    <div class="texto-bot">
+      <span class="pontos-digitando">
+        <span>.</span><span>.</span><span>.</span>
+      </span>
+    </div>
+  `;
+  chatBody.appendChild(digitando);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  // Remove bolha e mostra resposta após 5 segundos
+  setTimeout(() => {
+    digitando.remove();
+
+    const botIntro = document.createElement("div");
+    botIntro.className = "mensagem bot";
+    botIntro.innerHTML = `
+      <div class="bolinha-avatar"></div>
+      <div class="texto-bot">Olá! Sou o Jonas, seu assistente da NextRoute. 😊</div>
+    `;
+    chatBody.appendChild(botIntro);
+
+    const botResposta = document.createElement("div");
+    botResposta.className = "mensagem bot";
+    botResposta.innerHTML = `
+      <div class="bolinha-avatar"></div>
+      <div class="texto-bot">${resposta}</div>
+    `;
+    chatBody.appendChild(botResposta);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 2000);
+}
+
+function enviarMensagem() {
+  const input = document.getElementById("mensagemUsuario");
+  const texto = input.value.trim();
+  if (texto === "") return;
+
+  const chatBody = document.getElementById("chat-body");
+
+  const userMsg = document.createElement("div");
+  userMsg.className = "mensagem user";
+  userMsg.innerText = texto;
+  chatBody.appendChild(userMsg);
+
+  input.value = "";
+
+  const digitando = document.createElement("div");
+  digitando.className = "mensagem bot digitando";
+  digitando.innerHTML = `
+    <div class="bolinha-avatar"></div>
+    <div class="texto-bot">
+      <span class="pontos-digitando">
+        <span>.</span><span>.</span><span>.</span>
+      </span>
+    </div>
+  `;
+  chatBody.appendChild(digitando);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  setTimeout(() => {
+    digitando.remove();
+
+    const botResposta = document.createElement("div");
+    botResposta.className = "mensagem bot";
+    botResposta.innerHTML = `
+      <div class="bolinha-avatar"></div>
+      <div class="texto-bot">Agradecemos pelo contato! Seu atendente irá te responder em breve.</div>
+    `;
+    chatBody.appendChild(botResposta);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 1000);
+}
+
+
+function limparChat() {
+  const chatBody = document.getElementById("chat-body");
+  chatBody.innerHTML = `
+    <div class="perguntas">
+      <button onclick="selecionarPergunta(1)">O que é a NextRoute?</button>
+      <button onclick="selecionarPergunta(2)">Como funciona o planejamento?</button>
+      <button onclick="selecionarPergunta(3)">A NextRoute tem aplicativo?</button>
+    </div>
+  `;
+}
+
+
+
+document.getElementById("mensagemUsuario").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    enviarMensagem();
+  }
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+    <div class="retangulo"></div>
+    
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>Contatos</h3>
+      <p><a href="mailto:NextRouteturismo@Outlook.com">Nextrouteturismo@Outlook.com</a></p>
+      <p><a href="#">NextRoute.com.br/contato</a></p>
+      <p><a href="#">(55) 11 923758952</a></p>
+      <p><a href="#">Nossos Termos de usuário</a></p>
+    </div>
+
+    <div class="footer-illustration">
+      <img src="imagens/aviaopontaponta.png" alt="Avião">
+    </div>
+
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <p><a href="https://www.instagram.com/nextroute_turismo/" target="_blank"><img src="imagens/Instagram.png" alt="Instagram" class="Instagram"> NextRoute_Turismo</a></p>
+      <p><a href="#"><img src="imagens/Twitter3.png" alt="Twitter" class="Twitter"> NextRouteTurismo</a></p>
+      <p><a href="#"><img src="imagens/Youtube.png" alt="YouTube" class="Youtube"> NextRouteTurismo</a></p>
+    </div>
+
+    <div class="footer-illustration2">
+      <img src="imagens/praia.png" alt="Praia">
+    </div>
+
+    <div class="footer-section">
+      <h3>Agências físicas próximas</h3>
+      <p><a href="#">Av. Melchert 273N - Vila Matilde, São Paulo</a></p>
+      <p><a href="#">Av. Tiradentes 825 - Jardim Santa Edwirges, Guarulhos</a></p>
+      <p><a href="#">Av. Sen. Queirós 208v - Centro Histórico de São Paulo</a></p>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>

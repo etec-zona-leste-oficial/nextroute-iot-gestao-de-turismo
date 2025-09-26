@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextRoute - Sobre Nós</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap">
+  
+<style>
+:root {
+  --azulescuro: #041D45;
+  --azulclaro: #e6f0ff;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+  --azulbebe: #e6f0ff;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-escuro: #041D45;
+  --azul: #0055aa;
+  --azul-claro: #4a90e2;
+  --laranja: #ff6600;
+  --azul-claro2: #84ADCE;
+  --cinza: #f4f4f4;
+  --branco: #ffffff;
+  --texto: #333;
+  --fonte: 'Inter', sans-serif;
+
+}
+
+
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  background-color: var(--branco);
+  color: var(--texto);
+}
+
+header {
+  background-color: var(--azul-escuro);
+  padding: 20px 30px;
+}
+
+ /*Inicio do nav novo */
+
+    nav { display: flex; flex: 1; align-items: center; justify-content: space-between; margin-left: 2rem; }
+    .menu-links, .menu-login { display: flex; gap: 1.5rem; list-style: none; text-align: center;}
+    nav a {  header {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(25, 6, 6, 0.183);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+  }
+
+  .logo {
+    transform: translateY(-12px);
+  }
+  .menu-links {
+    transform: translateY(10px);
+  }
+
+    .logo { height: 45px; }
+
+    nav { display: flex; flex: 1; align-items: center; justify-content: space-between; margin-left: 2rem; }
+    .menu-links, .menu-login { display: flex; gap: 1.5rem; list-style: none; text-align: center;}
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+      padding: 0.3rem 0;
+      text-align: center;
+    }
+    nav a:hover { color: var(--secondary); }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* Botão menu hamburguer */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 21px;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+/* MOBILE */
+.menu-toggle {
+    display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--branco);
+  outline: none;
+  border: none;
+}
+
+
+
+.Menu-login a,
+nav ul li a {
+  text-decoration: none;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+
+.banner img {
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+}
+
+.banner-title {
+  margin: 2rem 0;
+}
+
+.banner-title h1 {
+  color: var(--azulescuro);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+
+.selo-container {
+  width: 100%;
+  background-color: var(--azulbebe);
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.selo-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--azulescuro);
+}
+
+.selo-next-route img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+
+.sobre-next-route {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--azulbebe);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.sobre-next-route h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.sobre-next-route p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.main-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.team-member {
+  flex: 1 1 calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  min-width: 250px;
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+
+.changelog {
+  background-color: var(--azulbebe);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.changelog h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--azulescuro);
+}
+
+.changelog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.changelog-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.changelog-item h3 {
+  color: var(--azulescuro);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.changelog-item ul {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+
+
+footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px; 
+  flex-wrap: wrap;
+  align-items: flex-start; 
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  font-size: 0.9rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  margin: 6px 0;
+}
+
+.footer-section a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 120px; 
+}
+
+.footer-illustration img {
+  margin-top: 30px;
+  margin-left: -50px;
+  max-width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.footer-illustration2 img {
+  transform: translateX(-70px);
+  max-width: 130px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.Instagram {
+  width: 10px;
+}
+
+.Twitter {
+  height: 11px;
+}
+
+
+.Youtube {
+  width: 10px;
+}
+    .logo-container a { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .retangulo { width: 100%; height: 20px; background-color: var(--primary); transform: translateY(30px); }
+
+ /* RESPONSIVO */
+    @media (max-width: 768px) {
+      header { flex-direction: column; padding: 1rem; }
+      nav { margin-top: 1rem; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      .hero-section h1 { font-size: 2rem; }
+      .container-contato { padding: 2rem 1rem; gap: 2rem; }
+      .form-contato, .info-contato { padding: 1.5rem; }
+
+      /* Menu Hambúrguer */
+      .menu-toggle { display: flex; flex-direction: column; justify-content: space-between; width: 28px; height: 21px; cursor: pointer; margin-left: auto; }
+      .menu-toggle span { display: block; height: 3px; width: 100%; background-color: white; border-radius: 3px; transition: all 0.3s ease; }
+
+      .menu-links, .menu-login { display: none; flex-direction: column; width: 100%; text-align: center; background-color: var(--primary); border-radius: 8px; margin-top: 0.5rem; overflow: hidden; }
+      .menu-links.show, .menu-login.show { display: flex; }
+      nav { flex-direction: column; align-items: flex-end; width: 100%; }
+
+      .main-footer { flex-direction: column; padding: 20px; }
+      .main-footer > div { margin: 15px 0; }
+    }
+.logo {
+  max-width: 50px;
+}
+
+
+
+.retangulo {
+  width: 100%;    
+  height: 20px;      
+  background-color: var(--azulescuro); 
+  transform: translateY(30px);
+}
+
+
+</style>
+
+<script>
+function toggleMenu() {
+  document.querySelector("nav ul").classList.toggle("active");
+}
+</script>
+  
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <a href="index.html">
+
+    </a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav>
+    <ul class="menu-links">
+      <img src="imagens/icon.png" alt="NextRoute" class="logo">
+      <span style="color:white; font-weight:700; margin-left:10px;">NextRoute</span>
+      <li><a href="faq.html">Planeje sua viagem</a></li>
+      <li><a href="Destinos.html">Destinos</a></li>
+      <li><a href="FaleConosco.html">Contato</a></li>
+      <li><a href="sobrenos.html">Sobre nós</a></li>
+    </ul>
+    <ul class="menu-login">
+      <li><a href="Cadastro.html">Cadastro</a></li>
+      <li><a href="Login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="selo-container">
+  <h1>NextRoute</h1>
+  <div class="selo-next-route">
+    <img src="imagens/Selo.png" alt="Selo NextRoute">
+  </div>
+</div>
+
+<section class="sobre-next-route">
+  <h2>Sobre a NextRoute</h2>
+  <p>Transformando o turismo com inteligência e sustentabilidade.</p>
+  <p>
+    A NextRoute nasceu com o propósito de facilitar a experiência de quem viaja e 
+    valorizar cada destino. Nosso foco é conectar pessoas, empresas e gestores com 
+    ferramentas que tornam o turismo mais eficiente e responsável.
+  </p>
+  <p>
+    Unimos tecnologia, dados e criatividade para criar soluções que ajudam a planejar 
+    viagens, organizar operações e destacar a cultura local. Assim, cada roteiro se 
+    torna mais prático, seguro e enriquecedor.
+  </p>
+  <p>
+    Nossa equipe é movida pela paixão por inovação e por experiências únicas. Trabalhamos 
+    para que cada jornada seja memorável e que os destinos sejam preservados para as 
+    próximas gerações.
+  </p>
+</section>
+
+<div class="main-container">
+  <h2>Nossa Equipe</h2>
+
+  <div class="team-member">
+    <img src="imagens/equipe.jpg" alt="Victor Rossi">
+    <div>
+      <div class="name">Victor Rossi</div>
+      <div class="role">
+        Estudante do 1º ano do Ensino Médio no curso de Desenvolvimento de Sistemas da ETEC Zona Leste.<br>
+        Desenvolvimento no Figma, redator técnico e design do projeto NextRoute.
+      </div>
+    </div>
+  </div>
+
+  <div class="team-member">
+    <img src="imagens/equipe.jpg" alt="Nicolly Lucia">
+    <div>
+      <div class="name">Nicolly Lucia</div>
+      <div class="role">
+        Estudante do 1º ano do Ensino Médio no curso de Desenvolvimento de Sistemas da ETEC Zona Leste.<br>
+        Design, representação, estruturação e pesquisa do projeto NextRoute.
+      </div>
+    </div>
+  </div>
+
+  <div class="team-member">
+    <img src="imagens/equipe.jpg" alt="Lara de Freitas">
+    <div>
+      <div class="name">Lara de Freitas</div>
+      <div class="role">
+        Estudante do 1º ano do Ensino Médio no curso de Desenvolvimento de Sistemas da ETEC Zona Leste.<br>
+        Líder, representação, design e estruturação do projeto NextRoute.
+      </div>
+    </div>
+  </div>
+
+  <div class="team-member">
+    <img src="imagens/equipe.jpg" alt="Julia Prado">
+    <div>
+      <div class="name">Julia Prado</div>
+      <div class="role">
+        Estudante do 1º ano do Ensino Médio no curso de Desenvolvimento de Sistemas da ETEC Zona Leste.<br>
+        Desenvolvimento do Figma, design e estruturação do projeto NextRoute.
+      </div>
+    </div>
+  </div>
+
+  <div class="team-member">
+    <img src="imagens/equipe.jpg" alt="Melissa Martins">
+    <div>
+      <div class="name">Melissa Martins</div>
+      <div class="role">
+        Estudante do 1º ano do Ensino Médio no curso de Desenvolvimento de Sistemas da ETEC Zona Leste.<br>
+        Pesquisas, representação e desenvolvimento no Figma do projeto NextRoute.
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<section class="changelog">
+  <h2>Changelog</h2>
+
+  <div class="changelog-list">
+    <div class="changelog-item">
+      <h3>19.08.2025</h3>
+      <ul>
+        <li>Atualizações no design
+          <ul>
+            <li>Cor trocada para Azul Escuro (#041D45)</li>
+            <li>Reformulação no layout das páginas</li>
+          </ul>
+        </li>
+        <li>Melhorias de usabilidade e novas interações</li>
+        <li>Correção de caixas dropdown</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <h3>20.08.2025</h3>
+      <ul>
+        <li>Novas páginas adicionadas
+          <ul>
+            <li>Páginas dedicadas para cada ponto turístico e/ou cidade</li>
+          </ul>
+        </li>
+        <li>Correção de bugs ao interagir com botões
+          <ul>
+            <li>Caixas flutuantes não aparecem mais em posições aleatórias</li>
+            <li>Cor de hover corrigida para azul mais claro</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <h3>21.08.2025</h3>
+      <ul>
+        <li>Página de FAQ adicionada</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <h3>24.08.2025</h3>
+      <ul>
+        <li>Opção de Login adicionada
+          <ul>
+            <li>Janela pop-up com opções de entrada</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <h3>25.08.2025</h3>
+      <ul>
+        <li>Sobre Nós reformulada
+          <ul>
+            <li>Página inclui sessão detalhada da equipe</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="changelog-footer">
+    <p>Agradecemos por acompanhar nossas atualizações! Nosso objetivo é sempre melhorar sua experiência, trazendo novas funcionalidades, melhorias de performance e interações otimizadas.</p>
+    <p>Para receber novas atualizações, siga-nos em nossas redes sociais oficiais ou visite este artigo quando quiser.</p>
+    <p>Para sugestões, dúvidas ou feedback, entre em contato: <a href="mailto:nextrouteturismo@outlook.com">nextrouteturismo@outlook.com</a></p>
+    <p><em>NextRoute – Transformando sua jornada, passo a passo.</em></p>
+  </div>
+</section>
+
+  
+    <div class="retangulo"></div>
+    
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>Contatos</h3>
+      <p><a href="mailto:NextRouteturismo@Outlook.com">Nextrouteturismo@Outlook.com</a></p>
+      <p><a href="#">NextRoute.com.br/contato</a></p>
+      <p><a href="#">(55) 11 923758952</a></p>
+      <p><a href="#">Nossos Termos de usuário</a></p>
+    </div>
+
+    <div class="footer-illustration">
+      <img src="imagens/aviaopontaponta.png" alt="Avião">
+    </div>
+
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <p><a href="https://www.instagram.com/nextroute_turismo/" target="_blank"><img src="imagens/Instagram.png" alt="Instagram" class="Instagram"> NextRoute_Turismo</a></p>
+      <p><a href="#"><img src="imagens/Twitter3.png" alt="Twitter" class="Twitter"> NextRouteTurismo</a></p>
+      <p><a href="#"><img src="imagens/Youtube.png" alt="YouTube" class="Youtube"> NextRouteTurismo</a></p>
+    </div>
+
+    <div class="footer-illustration2">
+      <img src="imagens/praia.png" alt="Praia">
+    </div>
+
+    <div class="footer-section">
+      <h3>Agências físicas próximas</h3>
+      <p><a href="#">Av. Melchert 273N - Vila Matilde, São Paulo</a></p>
+      <p><a href="#">Av. Tiradentes 825 - Jardim Santa Edwirges, Guarulhos</a></p>
+      <p><a href="#">Av. Sen. Queirós 208v - Centro Histórico de São Paulo</a></p>
+    </div>
+
+  </div>
+</footer>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const links = document.querySelector('.menu-links');
+  const login = document.querySelector('.menu-login');
+
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('show');
+    login.classList.toggle('show');
+  });
+</script>
+</body>
+</html>

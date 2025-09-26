@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextRoute | Hospedagem local</title>
+  <link rel="stylesheet" href="faq.css" />
+  <script src="mobile-navbar.js"></script>
+  <link rel="shortcut icon" href="imagens/icon.ico" type="image/x-icon">
+
+
+</head>
+
+<body>
+ <header>
+  <nav>
+
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="imagens/icon.png" alt="NextRoute" class="logo">
+        <span style="color:white; font-weight:700; margin-left:10px;">NextRoute</span>
+      </a>
+    </div>
+
+    <ul>
+      <li><a href="faq.html">Planeje sua viagem</a></li>
+      <li><a href="Destinos.html">Destinos</a></li>
+      <li><a href="FaleConosco.html">Contato</a></li>
+      <li><a href="sobrenos.html">Sobre nós</a></li>
+    </ul>
+
+    <ul class="Menu-login">
+      <li><a class="Cadastro" href="Cadastro.html">Cadastro</a></li>
+      <li><a class="Cadastro" href="Login.html">Login</a></li>
+    </ul>
+
+    
+  </nav>
+</header>
+
+  <main class="container" style="max-width:900px; margin:120px auto 60px auto; background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+    <h2 style="color:#0055aa; font-size:22px; margin-bottom:15px;">
+      Caso eu desconheça a hospedagem local, a NextRoute pode alugar um para o meu acesso?
+    </h2>
+    <p>
+      Sim! A <strong>NextRoute</strong> possui parcerias estratégicas com
+      <strong>hotéis, pousadas e hospedagens locais</strong> em diversos destinos.
+    </p>
+    <p>
+      Isso nos permite oferecer <strong>preços acessíveis</strong>, segurança e praticidade
+      para que você tenha onde se hospedar mesmo sem conhecer previamente a região.
+    </p>
+    <p>
+      Nosso objetivo é garantir que cada viagem seja confortável e tranquila,
+      proporcionando alternativas de hospedagem adequadas ao seu perfil e orçamento.
+    </p>
+    <a href="faq.html" class="voltar" style="display:inline-block; margin-top:20px; background:#0055aa; color:#fff; padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:bold;">← Voltar para o FAQ</a>
+  </main>
+
+    <div class="retangulo"></div>
+    
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>Contatos</h3>
+      <p><a href="mailto:NextRouteturismo@Outlook.com">Nextrouteturismo@Outlook.com</a></p>
+      <p><a href="#">NextRoute.com.br/contato</a></p>
+      <p><a href="#">(55) 11 923758952</a></p>
+      <p><a href="#">Nossos Termos de usuário</a></p>
+    </div>
+
+    <div class="footer-illustration">
+      <img src="imagens/aviaopontaponta.png" alt="Avião">
+    </div>
+
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <p><a href="https://www.instagram.com/nextroute_turismo/" target="_blank"><img src="imagens/Instagram.png" alt="Instagram" class="Instagram"> NextRoute_Turismo</a></p>
+      <p><a href="#"><img src="imagens/Twitter3.png" alt="Twitter" class="Twitter"> NextRouteTurismo</a></p>
+      <p><a href="#"><img src="imagens/Youtube.png" alt="YouTube" class="Youtube"> NextRouteTurismo</a></p>
+    </div>
+
+    <div class="footer-illustration2">
+      <img src="imagens/praia.png" alt="Praia">
+    </div>
+
+    <div class="footer-section">
+      <h3>Agências físicas próximas</h3>
+      <p><a href="#">Av. Melchert 273N - Vila Matilde, São Paulo</a></p>
+      <p><a href="#">Av. Tiradentes 825 - Jardim Santa Edwirges, Guarulhos</a></p>
+      <p><a href="#">Av. Sen. Queirós 208v - Centro Histórico de São Paulo</a></p>
+    </div>
+
+  </div>
+</footer>
+
+
+
+  <script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenus = document.querySelectorAll('nav ul'); // pega todas as ul dentro do nav
+
+menuToggle.addEventListener('click', () => {
+  navMenus.forEach(ul => ul.classList.toggle('active')); // ativa todas ao mesmo tempo
+});
+
+  </script>
+
+</body>
+</html>
